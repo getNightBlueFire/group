@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> Report preview </title>
+	<link rel="stylesheet" type="text/css" href="table.css" />
+</head>
+
+<body>
+	<p>Interactive report test:</p>
+	<div id="report-preview-content">
+		<div class="navigator">
+			<button v-on:click="decrementPage()">&#8678;</button>
+			<span> &nbsp; {{currentPage}} of {{numberOfPages()}} &nbsp;</span>
+			<button v-on:click="incrementPage()">&#8680;</button>
+		</div>
+		<div class="navigator">
+			<button v-on:click="insertBlankLineAfter()">&#8681;&#10010;</button>
+			<button v-on:click="insertBlankLineBefore()">&#8679;&#10010;</button>
+			<button v-on:click="deleteSelectedLine()">&nbsp;&#10008;</button>
+			<button v-on:click="shiftSelectedLineUp()">&#8679;</button>
+			<button v-on:click="shiftSelectedLineDown()">&#8681;</button>
+			<button v-on:click="sortItems()">&#8595;&#9776;</button>
+		</div>
+		<table style="border: 1px solid black; padding: 0px" cellspacing="0">
+			<thead>
+				<td class="verticalTableCell" cellspacing="0">Формат</td>
+				<td class="verticalTableCell" cellspacing="0">Зона</td>
+				<td class="verticalTableCell" cellspacing="0">Поз.</td>
+				<td style="border: 1px solid black; text-align: center;" cellspacing="0">Обозначение</td>
+				<td style="border: 1px solid black; text-align: center;" cellspacing="0">Наименование</td>
+
+				<!-- <td>
+					 <table>
+						<tr>tddd</tr>
+						<tr> -->
+				<div>
+					<!-- <div style="display: block;">ekgjsr;lt</div> -->
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Кол. на исполн.
+						<!-- <table style="border-top: 1px solid black; padding: 0px" cellspacing="0"">
+							  <tr>
+								<template v-for="quantity in table.quantitys">
+								  <td>01</td>
+								</template>
+							  </tr>
+							</table> -->
+					</td>
+				</div>
+							
+						<!-- </tr>
+					</table>
+				</td> -->
+				
+				<td style="border: 1px solid black; text-align: center;" cellspacing="0">Приме-<br />чание</td>
+				<!-- -->
+				<td style="border: 1px solid black; text-align: center;" cellspacing="0">row#</td>
+				<td style="border: 1px solid black; text-align: center;" cellspacing="0">page#</td>
+				<td style="border: 1px solid black; text-align: center;" cellspacing="0">uid</td>
+			</thead>
+			<template v-for="line in table.table">
+				<tr v-if="line.page_number==currentPage || is_single_page==true"
+					@click="rowClicked(line.row_number, line.page_number)" :key="line.row_number"
+					:key="line.page_number" :class="{'highlight': currentRow == line.row_number && currentPage == line.page_number, 
+										 'highlightSet': (selectedRows.includes(line.row_number) && (currentPage == line.page_number))
+						   || (line.element_id == currentId)}">
+					<td class="cellFormat" cellspacing="0">{{line.format? line.format : " "}}</td>
+					<td class="cellZone" cellspacing="0">{{line.zone}}</td>
+
+					<td class="cellPosition" @input="onCellInput(line.row_number,line.page_number)">{{line.position}}
+					</td>
+
+					<td v-if="line.heading!='true' && line.execution_var_no!='true'" class="cellShifr" cellspacing="0">
+						{{line.shifr}}</td>
+
+					<td v-if="line.heading=='true' && line.execution_var_no!='true'"
+						v-bind:class="getClassNameWideCell(line)" colspan="2" cellspacing="0">{{line.name}}</td>
+					<td v-if="line.heading=='true' || line.execution_var_no=='true'"
+						v-bind:class="getClassNameWideCell(line)" colspan="2" cellspacing="0">{{line.name}}</td>
+					<td v-if="line.heading!='true' && line.execution_var_no!='true'"
+						v-bind:class="getClassNameNormalCell(line)" cellspacing="0">{{line.name}}</td>
+					
+
+						<!-- <template v-for="item in line.quantitys">
+							<span style="border-right:1px solid black;">{{item ? item : '&nbsp;'}}</span>
+						</template> -->
+
+					<td class="cellQuantity">{{line.quantitys[0]}}</td>
+					<td class="cellQuantity">{{line.quantitys[1]}}</td>
+					<td class="cellQuantity">{{line.quantitys[2]}}</td>
+					<td class="cellQuantity">{{line.quantitys[3]}}</td>
+					<td class="cellQuantity">{{line.quantitys[4]}}</td>
+					<td class="cellQuantity">{{line.quantitys[5]}}</td>
+					<td class="cellQuantity">{{line.quantitys[6]}}</td>
+					<td class="cellQuantity">{{line.quantitys[7]}}</td>
+					<td class="cellQuantity">{{line.quantitys[8]}}</td>
+					<td class="cellQuantity">{{line.quantitys[9]}}</td>
+					
+					<td v-if="line.is_double_line!='true'" class="cellNote" cellspacing="0">{{line.note}}</td>
+					<td v-if="line.is_double_line=='true'" class="cellNoteDLine" cellspacing="0">{{line.note}}</td>
+					<td class="cellRow" cellspacing="0">{{line.row_number}}</td>
+					<td class="cellPage" cellspacing="0">{{line.page_number}}</td>
+					<td class="cellElement" cellspacing="0">{{line.element_id}}</td>
+				</tr>
+			</template>
+		</table>
+	</div>
+	<script src="vue.global.js"></script>
+	<script src="report.dataobject.js"></script>
+	<script src="report.table.js"></script>
+	<script>
+		dataObject.table = table;
+		/** Addition **/
+		let selectedSection = undefined;
+		let sections = ['Документация', 'Комплексы', 'Сборочные единицы',
+			'Детали', 'Стандартные изделия', 'Прочие изделия',
+			'Материалы', 'Комплекты'];
+		/**************/
+		var vm = Vue.createApp({
+			data() {
+				return dataObject;
+			},
+			methods: {
+				numberOfPages() {
+					return dataObject.getNumberOfPages();
+				},
+				rowClicked(rowNumber) {
+					this.currentRow = rowNumber;
+					this.selectElement();
+					/** Addition **/
+					if (sections.includes(this.getSelectedLine(this.selectedRows[0]).name))
+						selectedSection = this.getSelectedLine(this.selectedRows[0]).name;
+					else
+						selectedSection = undefined;
+					/**************/
+				},
+				getClassNameNormalCell: function (line) {
+					if (line.razdel == 'true')
+						return 'wideCell';
+
+					if (line.execution == 'true')
+						return 'executionCell';
+
+					if (line.litera_and_execution_text == 'true')
+						return 'literaExecCell';
+
+					return 'cellName';
+				},
+				getClassNameWideCell: function (line) {
+					if (line.execution_var_no == 'true')
+						return 'wideCellExecution';
+
+					if (line.is_note == 'true')
+						return 'wideCellNote'
+
+					return 'wideCell';
+				},
+				/***********************/
+				/** Addon for sorting **/
+				/***********************/
+				sortItems: function () {
+					let sorters = this.sortingDefault();
+					let sorter = sorters.sortFunctions[selectedSection];
+					let cmp = sorters.comparators[selectedSection];
+					if (sorter) {
+						sorter(cmp, selectedSection);	// sort section
+					} else {
+						// sort all sections
+						for (let srt in sorters.sortFunctions) {
+							sorters.sortFunctions[srt](sorters.comparators[srt], srt);
+						}
+					}
+
+					this.updateTableCounters();
+				},
+				/** Default sorting routine **/
+				sortingDefault: function () {
+					/** Find start and end of section **/
+					let findSection = function (name, findFrom) {
+						let start = undefined;
+						let end = undefined;
+						let i = findFrom ? findFrom : 0;
+						for (; i < dataObject.table.table.length; i++) {
+							if (dataObject.table.table[i].real_type == name)
+								break;
+						}
+						start = i++;
+						for (; i < dataObject.table.table.length; i++) {
+							if (sections.includes(dataObject.table.table[i].real_type) || (dataObject.table.table[i].real_type == 'execution'))
+								break;
+						}
+						end = i <= dataObject.table.table.length - 1 ? i : dataObject.table.table.length - 1;
+						return start <= end ? [start, end] : undefined;
+					}
+					/** Find sub-executions **/
+					let findSubExecutions = function (margin) {
+						// TODO
+						let subMargins = margin;
+						return [subMargins];
+					}
+					/** Sort entry point **/
+					let sort = function (cmp, section) {
+						if (!cmp || !section)
+							return;
+
+						let start = 0;
+						let margin = undefined;
+						while (margin = findSection(section, start)) {
+							start = margin[1];
+							sortInMargin(margin, cmp);
+						}
+					}
+					/** Create array of line-elements to sort **/
+					let createElementArray = function (margin) {
+						let array = [];
+						for (let line = margin[0]; line <= margin[1]; line++) {
+							if (dataObject.table.table[line].element_id && dataObject.table.table[line].real_type != 'execution') {
+								if (!array.includes(dataObject.table.table[line].element_id))
+									array.push(dataObject.table.table[line].element_id);
+							}
+						}
+						return array;
+					}
+					/** Get line set by element id **/
+					let getElementById = function (id) {
+						let result = []
+						for (let i = 0, found = false; i < dataObject.table.table.length; i++) {
+							if (dataObject.table.table[i].element_id == id) {
+								result.push(dataObject.table.table[i]);
+								found = true;
+							} else if (found) {
+								break;
+							}
+						}
+						return result;
+					}
+					/** Returns element properties from a meta-data section **/
+					let getElemetProperties = function (line, prop) {
+						let metadata = table.metaData;
+						let result = null;
+						for (let e of metadata) {
+							if (line.uid == e.uid && line.tableId == e.tableId) {
+								result = e[prop];
+								break;
+							}
+						}
+						return result;
+					}
+					/** Swap line sets in main table object **/
+					let swapElements = function (e1, e2) {
+						// Swap to right order
+						if (dataObject.table.table.indexOf(e1[0]) > dataObject.table.table.indexOf(e2[0])) {
+							let tmp = e1;
+							e1 = e2;
+							e2 = tmp;
+						}
+						let firstPosition = dataObject.table.table.indexOf(e1[0]);
+						let secondPosition = dataObject.table.table.indexOf(e2[0]);
+						dataObject.table.table.splice(secondPosition, e2.length, ...e1);
+						dataObject.table.table.splice(firstPosition, e1.length, ...e2);
+					}
+					/** Main sort routine **/
+					let sortInMargin = function (margin, cmp) {
+						let idArray = createElementArray(margin);
+						if (idArray.length < 2)
+							return;
+
+						let array = [];
+						for (let id of idArray) {
+							let element = getElementById(id);
+							array.push(element);
+						}
+						/* Bubble sort */
+						for (let i = array.length, isSorted = false; i >= 0; i--) {
+							isSorted = true;
+							for (let j = 1; j < i; j++) {
+								if (cmp(array[j - 1], array[j])) {
+									swapElements(array[j - 1], array[j]);
+									/* Refresh array mapping */
+									let tmp = array[j - 1];
+									array[j - 1] = array[j];
+									array[j] = tmp;
+									isSorted = false;
+								}
+							}
+						}
+						reassignPositions();
+					}
+					/** Changes positions numbers **/
+					let reassignPositions = function () {
+						let counter = 1;
+						let stackPositions = [];
+						// Blank parts checking
+						for (let i in table.table) {
+							if (!table.table[i].position)
+								continue;
+							let e = getElemetProperties(table.table[i], 'is_blank_part');
+							if (e == 'true')
+								stackPositions.push(parseInt(table.table[i].position));
+						}
+						// Reassign others
+						let lastPos = 0;
+						for (let i in table.table) {
+							if (!table.table[i].position)
+								continue;
+							if (getElemetProperties(table.table[i], 'is_blank_part') == 'true') {
+								if (table.table[i].position)
+									lastPos = parseInt(table.table[i].position);
+
+								console.log(lastPos);
+								continue;
+							}
+							while (stackPositions.includes(counter) != false || counter <= lastPos)
+								counter++;
+							table.table[i].position = counter;
+							stackPositions.push(counter);
+							lastPos = counter;
+						}
+					}
+					/** Integer comparator **/
+					let cmpInt = function (x, y) {
+						return x > y;
+					}
+					/** Default comparator for strings **/
+					let cmpStrings = function (x, y) {
+						return x.toLowerCase().localeCompare(y.toLowerCase());
+					}
+					/** Default comparator for elements **/
+					let cmpDefault = function (e1, e2) {
+						let length1 = e1.length;
+						let length2 = e2.length;
+						let length = length1 < length2 ? length1 : length2;
+						for (let i = 0; i < length; i++) {
+							let result = cmpStrings(e1[i].name, e2[i].name);
+							if (result != 0)
+								return result > 0;
+						}
+						if (length1 != length2) {
+							return length1 > length2 ? true : false;
+						}
+						return false;
+					}
+					/** Comparator for materials **/
+					let cmpMaterials = function (e1, e2) {
+						let checkRange = function (e1, e2) {
+							let ranges = [0, 0];
+							let rangeMap = new Map([
+								["ОСТ", 1],
+								["ГОСТ", 2]
+							]);
+							for (let val of rangeMap.keys()) {
+								for (let e of e1) {
+									if (e.name.includes(val))
+										ranges[0] = rangeMap.get(val);
+								}
+								for (let e of e2) {
+									if (e.name.includes(val))
+										ranges[1] = rangeMap.get(val);
+								}
+							}
+							return ranges;
+						}
+						let ranges = checkRange(e1, e2);
+						if (ranges[0] != ranges[1])
+							return ranges[0] < ranges[1];
+
+						return cmpDefault(e1, e2);
+					}
+					/** Comparator for details **/
+					let cmpStdDetails = cmpMaterials;
+					/** Comparator for documents **/
+					let cmpDocuments = function (e1, e2) {
+						let docTypes = table.docTypes;
+						let getTypeOrder = function (val) {
+							for (let x in docTypes) {
+								let aaa = docTypes[x];
+								if (docTypes[x] == val)
+									return parseInt(x);
+							}
+							return -1;
+						}
+						// Ranges
+						let order1 = getTypeOrder(getElemetProperties(e1[0], 'document_type'));
+						let order2 = getTypeOrder(getElemetProperties(e2[0], 'document_type'));
+						console.log(order1 + ' - ' + order2)
+						// Range ordering
+						if (order1 < order2)
+							return true;
+						else if (order1 > order2)
+							return false;
+						// Lexicoghraphic compare
+						return cmpDefault(e1, e2);
+					}
+					/** Object for callbacks **/
+					return {
+						sortFunctions: Object.fromEntries([
+							['Документация', sort],
+							['Комплексы', sort],
+							['Сборочные единицы', sort],
+							['Детали', sort],
+							['Стандартные изделия', sort],
+							['Прочие изделия', sort],
+							['Материалы', sort],
+							['Комплекты', sort]]),
+						comparators: Object.fromEntries([
+							['Документация', cmpDocuments],
+							['Комплексы', cmpDefault],
+							['Сборочные единицы', cmpDefault],
+							['Детали', cmpDefault],
+							['Стандартные изделия', cmpStdDetails],
+							['Прочие изделия', cmpDefault],
+							['Материалы', cmpMaterials],
+							['Комплекты', cmpDefault]])
+					};
+				}
+			}
+		}).mount('#report-preview-content');
+	</script>
+</body>
+
+</html>

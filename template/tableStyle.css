@@ -1,0 +1,92 @@
+.navigator {
+  text-align: center;
+  border: 1px solid;
+}
+
+.verticalTableCell {
+	transform: rotate(180deg);
+    writing-mode: vertical-rl;
+	border: 1px solid;
+	text-align: center;
+}
+
+.cellFormat {
+	border: 1px solid black; 
+	width: 20px;
+}
+
+.cellZone {
+	border: 1px solid black; 
+	width: 20px;
+}
+
+.cellPosition {
+	border: 1px solid black; 
+	width: 20px;
+}
+
+.cellShifr {
+	border: 1px solid black; 
+	width: 170px;
+}
+
+.cellName {
+	border: 1px solid black; 
+	width: 170px;
+}
+
+.wideCell {
+	border: 1px solid black; 
+	text-decoration: underline;
+	text-align: center;
+}
+
+.wideCellExecution {
+	border: 1px solid black; 
+	text-align: center;
+}
+
+.wideCellNote {
+	border: 1px solid black; 
+	text-align: left;
+}
+
+.literaExecCell {
+	border: 1px solid black; 
+	text-align: center;
+}
+
+.executionCell {
+	border: 1px solid black; 
+	text-decoration: underline;
+	text-align: center;
+}
+
+.cellQuantity {
+	border: 1px solid black; 
+	width: 50px;
+}
+
+.cellNote {
+	border: 1px solid black; 
+	width: 100px;
+}
+
+.cellNoteDLine {
+	border: 1px solid black; 
+	width: 100px;
+	font-size: x-small;
+}
+
+.cellTest {
+	border: 1px solid black; 
+	width: 100px;
+}
+
+.highlight {
+     background-color: #00FFFF;
+}
+
+tr:hover{
+     cursor: pointer;
+}
