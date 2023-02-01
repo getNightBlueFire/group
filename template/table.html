@@ -27,60 +27,62 @@
 			<thead>
 				<tr>
 					<td class="verticalTableCell" cellspacing="0">Формат</td>
-				<td class="verticalTableCell" cellspacing="0">Зона</td>
-				<td class="verticalTableCell" cellspacing="0">Поз.</td>
-				<td style="border: 1px solid black; text-align: center;" cellspacing="0">Обозначение</td>
-				<td style="border: 1px solid black; text-align: center;" cellspacing="0">Наименование</td>
-				<td style="border: 1px solid black; text-align: center; padding: 0;" cellspacing="0" colspan="10">
+					<td class="verticalTableCell" cellspacing="0">Зона</td>
+					<td class="verticalTableCell" cellspacing="0">Поз.</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Обозначение</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Наименование</td>
+					<td style="border: 1px solid black; text-align: center; padding: 0;" cellspacing="0" colspan="10">
 						<table style="width: 100%; padding: 0px; border-spacing: 0;" cellspacing="0">
 							<tbody>
 								<tr style="width: 100%; height: 32px;">
 									<td colspan="10">
 										Кол. на исполн. {{table.stamp.description}}-
 									</td>
-							  </tr style="width: 100%; height: 100%;">
-							  <tr>
-								<td colspan="1" style="width: 50px; height: 100%; border: 1px solid #000000; border-left: 0;  border-bottom: 0;">
-									{{table.stamp.quantities[0]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[1]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[2]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[3]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[4]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[5]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[6]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[7]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
-									{{table.stamp.quantities[8]}}
-								</td>
-								<td colspan="1" style="width: 50px; border: 1px solid #000000; border-right: 0; border-bottom: 0;">
-									{{table.stamp.quantities[9]}}
-								</td>
-							  </tr>
+								</tr style="width: 100%; height: 100%;">
+								<tr>
+									<td colspan="1"
+										style="width: 50px; height: 100%; border: 1px solid #000000; border-left: 0;  border-bottom: 0;">
+										{{table.stamp.quantities[0]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[1]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[2]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[3]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[4]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[5]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[6]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[7]}}
+									</td>
+									<td colspan="1" style="width: 50px; border: 1px solid #000000; border-bottom: 0;">
+										{{table.stamp.quantities[8]}}
+									</td>
+									<td colspan="1"
+										style="width: 50px; border: 1px solid #000000; border-right: 0; border-bottom: 0;">
+										{{table.stamp.quantities[9]}}
+									</td>
+								</tr>
 							</tbody>
-							</table>
-				</td>
-				<td style="border: 1px solid black; text-align: center;" cellspacing="0">Приме-<br />чание</td>
-				<!-- -->
-				<td style="border: 1px solid black; text-align: center;" cellspacing="0">row#</td>
-				<td style="border: 1px solid black; text-align: center;" cellspacing="0">page#</td>
-				<td style="border: 1px solid black; text-align: center;" cellspacing="0">uid</td>
+						</table>
+					</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">Приме-<br />чание</td>
+					<!-- -->
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">row#</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">page#</td>
+					<td style="border: 1px solid black; text-align: center;" cellspacing="0">uid</td>
 				</tr>
-				
+
 			</thead>
 			<template v-for="line in table.table">
 				<tr v-if="line.page_number==currentPage || is_single_page==true"
@@ -103,9 +105,9 @@
 						v-bind:class="getClassNameWideCell(line)" colspan="2" cellspacing="0">{{line.name}}</td>
 					<td v-if="line.heading!='true' && line.execution_var_no!='true'"
 						v-bind:class="getClassNameNormalCell(line)" cellspacing="0">{{line.name}}</td>
-					
 
-						<!-- <template v-for="item in line.quantitys">
+
+					<!-- <template v-for="item in line.quantitys">
 							<span style="border-right:1px solid black;">{{item ? item : '&nbsp;'}}</span>
 						</template> -->
 
@@ -119,7 +121,7 @@
 					<td class="cellQuantity">{{line.quantitys[7]}}</td>
 					<td class="cellQuantity">{{line.quantitys[8]}}</td>
 					<td class="cellQuantity">{{line.quantitys[9]}}</td>
-					
+
 					<td v-if="line.is_double_line!='true'" class="cellNote" cellspacing="0">{{line.note}}</td>
 					<td v-if="line.is_double_line=='true'" class="cellNoteDLine" cellspacing="0">{{line.note}}</td>
 					<td class="cellRow" cellspacing="0">{{line.row_number}}</td>
